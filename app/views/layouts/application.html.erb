@@ -8,12 +8,40 @@
     <%= render "layouts/shim" %>
   </head>
   <body>
-    <%= render "layouts/header" %>
+    <%= render "layouts/nav" %>
     <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <% end %>
+    <div class="container main">
+      <div class="row">
+        <% if logged_in? %>
+          <div class="col-sm-9">
+            <%= yield %>
+          </div>
+          <div class="col-sm-3">
+            <div class="sidebar-nav-fixed pull-right affix">
+              <div class="well">
+                <div class="well">
+                  <p>Upcoming Events:</p>
+                </div>
+                <div class="well">
+                  <p>Tracking</p>
+                </div>
+                <div class="well">
+                  <p>Index</p>
+                </div>
+                <div class="well">
+                  <p>Friends</p>
+                </div>
+              </div>
+          </div>
+        </div>
+      <% else %>
+        <div class="col-sm-12">
+            <%= yield %>
+          </div>
       <% end %>
-    <div class="container">
-      <%= yield %>
     </div>
+  </div>
   </body>
 </html>

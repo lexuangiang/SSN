@@ -1,19 +1,18 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:session, url: login_path) do |f| %>
-
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+<div class="container">
+  <div class="card card-container">
+    <h2 class="text-center">Sign in</h2>
+    <%= image_tag "icon.png", class: "profile-img-card" %>
+    <p id="profile-name" class="profile-name-card"></p>
+    <%= simple_form_for(:session, url: login_path) do |f| %>
+    <form class="form-signin">
+      <span id="reauth-email" class="reauth-email"></span>
+        <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "yourmail@example.com", input_html: {size: 30, class: "form-control"} %>
+        <%= f.input :password, label: false, required: false, placeholder: "Password", input_html: {size: 30, class: "form-control"} %>
+        <%= f.button :submit, "Log in", class: "btn btn-lg btn-primary btn-block btn-signin" %>
+      </form>
     <% end %>
-
     <p>New user? <%= link_to "Sign up now!", signup_path %></p>
   </div>
 </div>
+
