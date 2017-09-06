@@ -9,10 +9,8 @@
   </head>
   <body>
     <%= render "layouts/nav" %>
-    <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
-    <% end %>
     <div class="container main">
+      <%= render "layouts/flash" %>
       <div class="row">
         <% if logged_in? %>
           <div class="col-sm-9">

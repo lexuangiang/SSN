@@ -19,6 +19,8 @@ gem "bootstrap-sass", "3.3.7"
 gem "bcrypt", "3.1.11"
 gem "font-awesome-rails"
 gem "simple_form"
+gem "faker", "1.7.3"
+gem "kaminari"
 
 group :development, :test do
   gem "byebug", platform: :mri

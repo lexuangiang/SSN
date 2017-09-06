@@ -1,0 +1,10 @@
+<%= simple_form_for(@user) do |f| %>
+  <form class="form-signin">
+    <span id="reauth-email" class="reauth-email"></span>
+    <%= f.input :name, label: false, class: "form-control", placeholder: "What your name?" %>
+    <%= f.input :email, label: false, class: "form-control", placeholder: "Enter your email" %>
+    <%= f.input :password, label: false, class: "form-control", placeholder: "password" %>
+    <%= f.input :password_confirmation, label: false, class: "form-control", placeholder: "password confirmation" %>
+    <%= f.submit yield(:button_text), class: "btn btn-lg btn-primary btn-block btn-signin" %>
+  </form>
+<% end %>

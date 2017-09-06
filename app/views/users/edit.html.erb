@@ -1,10 +1,9 @@
-<% provide(:title, 'Sign up') %>
-<% provide(:button_text, "Sign up") %>
+<% provide(:title, "Edit Infor") %>
+<% provide(:button_text, "Edit information") %>
 <div class="container">
   <div class="card card-container">
-    <h2 class="text-center">Sign up</h2>
+    <h2 class="text-center">Edit</h2>
     <%= image_tag "icon.png", class: "profile-img-card" %>
     <p id="profile-name" class="profile-name-card"></p>
     <%= render "form" %>
-    <p>Already have account? <%= link_to "Signin", login_path %></p>
 </div>
