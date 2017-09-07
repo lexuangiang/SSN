@@ -9,6 +9,7 @@
       <span id="reauth-email" class="reauth-email"></span>
         <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "yourmail@example.com", input_html: {size: 30, class: "form-control"} %>
         <%= f.input :password, label: false, required: false, placeholder: "Password", input_html: {size: 30, class: "form-control"} %>
+        <%= link_to "Forgot password", new_password_reset_path %>
         <%= f.label :remember_me, class: "checkbox inline" do %>
           <%= f.check_box :remember_me %><span>Remember me</span>
         <% end %>
