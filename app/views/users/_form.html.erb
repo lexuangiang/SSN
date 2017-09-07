@@ -1,4 +1,5 @@
 <%= simple_form_for(@user) do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
   <form class="form-signin">
     <span id="reauth-email" class="reauth-email"></span>
     <%= f.input :name, label: false, class: "form-control", placeholder: "What your name?" %>

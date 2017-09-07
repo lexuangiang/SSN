@@ -24,3 +24,8 @@ User.create!(name:  "giangkt",
                activated: true,
                activated_at: Time.zone.now)
 end
+users = User.order(:created_at).take(6)
+50.times do
+  content = Faker::Name.name+ Faker::Name.name + Faker::Name.name
+  users.each { |user| user.microposts.create!(content: content)}
+end
